@@ -2,10 +2,7 @@ import pinecone as pn
 from langchain.embeddings import OpenAIEmbeddings
 import pandas as pd
 import tomli
-
-# Get environment variables
-with open("config.toml", mode="rb") as fp:
-    config = tomli.load(fp)
+import streamlit as st
 
 # This will held the functions to be used in the backend of the app
 
@@ -14,12 +11,12 @@ with open("config.toml", mode="rb") as fp:
 def get_business(query):
     print("The query is: ", query)
     # Get OpenAI embeddings
-    openai_embeddings = OpenAIEmbeddings(openai_api_key=config["OPENAI_API_KEY"])
+    openai_embeddings = OpenAIEmbeddings(openai_api_key=st.secrets["OPENAI_API_KEY"])
     # Emmbed question
     query_embedding = openai_embeddings.embed_query(query)
 
     # Initializee Pinecone
-    pn.init(api_key=config["PINECONE_API_KEY"], environment="us-west4-gcp")
+    pn.init(api_key=st.secrets["PINECONE_API_KEY"], environment="us-west4-gcp")
 
     # Get pinecone index
     index_name = "intelliflex-1536-1"
