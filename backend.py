@@ -4,7 +4,7 @@ import pandas as pd
 import tomli
 
 # Get environment variables
-with open(".toml", mode="rb") as fp:
+with open("config.toml", mode="rb") as fp:
     config = tomli.load(fp)
 
 # This will held the functions to be used in the backend of the app
