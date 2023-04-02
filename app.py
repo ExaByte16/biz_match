@@ -21,7 +21,7 @@ Actualmente, el directorio incluye a las startups de **Platzi Startups Latam 202
 """
 )
 
-st.write("Mira el video de presentación: [link](https://youtu.be/8Yv64dUA7UQ)")
+st.write("Mira el video de presentación: [link](https://youtu.be/LAU8O82BAGU)")
 
 
 query = st.text_area(
