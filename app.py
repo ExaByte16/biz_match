@@ -25,7 +25,7 @@ st.write("Mira el video de presentación: [link](https://youtu.be/LAU8O82BAGU)")
 
 
 query = st.text_area(
-    "Quiero una StarUp que...",
+    "Quiero una StartUp que...",
 )
 
 if st.button("Buscar"):
